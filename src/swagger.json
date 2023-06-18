@@ -1,0 +1,306 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "User List Api"
+    },
+    "basePath": "/api/v1",
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "consumes": [
+      "application/json",
+      "application/x-www-form-urlencoded",
+      "multipart/form-data"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "tags": [
+      {
+        "name": "User",
+        "description": "User Onboarding Api's"
+      }
+    ],
+    "paths": {
+      "/user/signUp": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "description": "User SignUp API",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "email",
+              "in": "formData",
+              "description": "email",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "in": "formData",
+              "description": "name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "countryCode",
+              "in": "formData",
+              "description": "country code like +91",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "phoneNumber",
+              "in": "formData",
+              "description": "phoneNumber",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/user/verifyOtp": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "description": "User Verify Otp",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "countryCode",
+              "in": "formData",
+              "description": "country code like +91",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "phoneNumber",
+              "in": "formData",
+              "description": "phoneNumber",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "otp",
+              "in": "formData",
+              "description": "otp",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/user/resendOtp": {
+        "put": {
+          "tags": [
+            "User"
+          ],
+          "description": "User Resend Otp",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "countryCode",
+              "in": "formData",
+              "description": "country code like +91",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "phoneNumber",
+              "in": "formData",
+              "description": "phoneNumber",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {}
+        }
+      },
+     
+     
+      "/user/forgotPassword": {
+        "put": {
+          "tags": [
+            "User"
+          ],
+          "description": "User Forgot Password",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "phoneNumber",
+              "in": "formData",
+              "description": "phoneNumber",
+              "required": false,
+              "type": "integer"
+            },
+            {
+              "name": "email",
+              "in": "formData",
+              "description": "email",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        }
+      },
+   
+      "/user/setNewPassword": {
+        "put": {
+          "tags": [
+            "User"
+          ],
+          "description": "User Set New Password",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "phoneNumber",
+              "in": "formData",
+              "description": "phoneNumber",
+              "required": false,
+              "type": "integer"
+            },
+            {
+              "name": "email",
+              "in": "formData",
+              "description": "email id",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "description": "password",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "confirm_Password",
+              "in": "formData",
+              "description": "confirm_Password",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        }
+      },
+     
+      "/admin/forgotPassword": {
+        "post": {
+          "tags": [
+            "Admin"
+          ],
+          "description": "User forget password",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "email",
+              "in": "formData",
+              "description": "email id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        }
+      },
+     
+      "/user/login": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "description": "User Login api",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "phoneNumber",
+              "in": "formData",
+              "description": "phoneNumber",
+              "required": false,
+              "type": "integer"
+            },
+            {
+              "name": "email",
+              "in": "formData",
+              "description": "email",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "description": "password",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/User/changePassword": {
+        "put": {
+          "tags": [
+            "User"
+          ],
+          "description": "User api",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Enter jwt token for authentication",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "oldPassword",
+              "in": "formData",
+              "description": "Enter old password",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "newPassword",
+              "in": "formData",
+              "description": "Enter new password",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "confirmNewPassword",
+              "in": "formData",
+              "description": "Enter New password to confirm",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {}
+        }
+      }
+    }
+  }
